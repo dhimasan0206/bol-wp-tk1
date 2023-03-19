@@ -187,6 +187,6 @@ class VideoController extends Controller
         $filepath = $video->path;
         $video->delete();
         Storage::disk('public')->delete($filepath);
-        return back()->with('success', 'Video has been successfully deleted.');
+        return to_route('list.video')->with('success', 'Video has been successfully deleted.');
     }
 }
